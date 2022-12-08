@@ -18,11 +18,6 @@ on:
     # run twice a week on Sunday and Thursday at 00:00
     - cron: '0 0 * * 0,4'
 
-# One build per branch, cancel out of date builds
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 permissions:
   actions: write
   contents: read
@@ -31,7 +26,7 @@ jobs:
   delete-obsolete-workflows:
     runs-on: ubuntu-22.04
     timeout-minutes: 15
-    if: github.inputs.purge-obsoletes == "true"
+    if: github.event.inputs.purge-obsoletes == true
     steps:
         - uses: otto-contentfactory/purge-workflow-runs@v1
           with:
@@ -40,7 +35,7 @@ jobs:
   delete-disabled-workflows:
     runs-on: ubuntu-22.04
     timeout-minutes: 15
-    if: github.inputs.delete-disabled == "true"
+    if: github.event.inputs.delete-disabled == true
     steps:
       - uses: actions/github-script@v6
         with:
