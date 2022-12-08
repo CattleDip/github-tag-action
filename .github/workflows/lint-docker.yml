@@ -2,9 +2,6 @@ name: "Lint Docker"
 
 on:
   pull_request:
-    paths:
-      - "**/Dockerfile.*"
-      - "**/docker-compose.*"
     branches:
       - main
       - master
