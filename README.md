@@ -6,7 +6,6 @@ A Github Action to automatically bump and tag master, on merge, with the latest 
 [![Tag](https://img.shields.io/github/v/tag/CattleDip/github-tag-action)](https://img.shields.io/github/v/tag/CattleDip/github-tag-action)
 ![Commits since latest release](https://img.shields.io/github/commits-since/cattledip/github-tag-action/latest/main)
 
-
 - [github-tag-action](#github-tag-action)
   - [Usage](#usage)
   - [Parameters](#parameters)

@@ -1,9 +1,79 @@
 name: 'Github Tag Action'
 description: 'Bump and push git tag on merge'
 author: 'CattleDip'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
+
+# TODO: Convert the envs to use these inputs instead
+inputs:
+  verbose:
+    description: 'Enable verbose logging'
+    required: false
+    default: 'false'
+  github_token:
+    description: 'Github token'
+    required: false
+  release_branches:
+    description: 'Comma separated list of branches to release from'
+    required: false
+    default: 'main,master'
+  pre_release_branches:
+    description: 'Comma separated list of branches to release from'
+    required: false
+    default: 'dev'
+  with_v:
+    description: 'Prepend v to tag'
+    required: false
+    default: 'true'
+  default_bump:
+    description: 'Default bump type'
+    required: false
+    default: 'minor'
+  custom_tag:
+    description: 'Custom tag'
+    required: false
+  source:
+    description: 'Source directory'
+    required: false
+  dry_run:
+    description: 'Dry run'
+    required: false
+    default: 'false'
+  initial_version:
+    description: 'Initial version'
+    required: false
+    default: '0.0.0'
+  tag_context:
+    description: 'Tag context'
+    required: false
+    default: 'repo'
+  prerelease:
+    description: 'Prerelease mode'
+    required: false
+    default: 'false'
+  prerelease_suffix:
+    description: 'Prerelease mode'
+    required: false
+    default: 'false'
+  major_string_token:
+    description: 'Major string token'
+    required: false
+    default: '#major'
+  minor_string_token:
+    description: 'Minor string token'
+    required: false
+    default: '#minor'
+  patch_string_token:
+    description: 'Patch string token'
+    required: false
+    default: '#patch'
+  none_string_token:
+    description: 'None string token'
+    required: false
+    default: '#none'
+
 outputs:
   new_tag:
     description: 'Generated tag'
@@ -11,6 +81,7 @@ outputs:
     description: 'The latest tag after running this action'
   part:
     description: 'The part of version which was bumped'
+
 branding:
   icon: 'git-merge'
   color: 'purple'

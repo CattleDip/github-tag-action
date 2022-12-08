@@ -106,8 +106,9 @@ jobs:
         env:
           VERBOSE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          release_branches: main
-          pre_release_branches: dev
+          RELEASE_BRANCHES: main
+          PRE_RELEASE_BRANCHES: dev
+          WITH_V: true
 
       # Publish
       - name: Create a GitHub release
