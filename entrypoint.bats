@@ -218,6 +218,3 @@ TARGET="entrypoint.sh"
   # check the output against expected values
   [ $REPLACE_LATEST_TAG = "true" ]
 }
-
-# Run the tests
-bats "${TARGET}.bats"
