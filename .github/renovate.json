@@ -1,0 +1,6 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>sammcj/renovate-config"],
+  "description": "Renovate configuration for the @cattledip organisation",
+  "assignees": ["sammcj"]
+}
