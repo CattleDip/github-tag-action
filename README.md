@@ -91,6 +91,7 @@ Environment Variables
 - **MINOR_STRING_TOKEN** _(optional)_ - Change the default `#minor` commit message string tag.
 - **PATCH_STRING_TOKEN** _(optional)_ - Change the default `#patch` commit message string tag.
 - **NONE_STRING_TOKEN** _(optional)_ - Change the default `#none` commit message string tag.
+- **REPLACE_LATEST_TAG** _(optional)_ - Replace the `latest` tag with the new tag. Possible values are `true` and `false` (default).
 
 ## Outputs
 

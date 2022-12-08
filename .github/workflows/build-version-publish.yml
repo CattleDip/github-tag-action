@@ -109,6 +109,7 @@ jobs:
           RELEASE_BRANCHES: main
           PRE_RELEASE_BRANCHES: dev
           WITH_V: true
+          REPLACE_LATEST_TAG: true
 
       # Publish
       - name: Create a GitHub release
