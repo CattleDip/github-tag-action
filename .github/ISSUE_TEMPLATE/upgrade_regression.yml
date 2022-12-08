@@ -1,0 +1,25 @@
+name: "⬆️🐛 Upgrade Bug - Regression"
+description: If you are upgrading to a new release version (stable or pre-release) and encounter a regression.
+labels: ["Needs: Triage :mag:", "Type: Upgrade Issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please use this form to file an issue if you have upgraded or are upgrading to latest stable release and have experienced a regression (something that used to work in previous version).
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Summary"
+      description: Provide a brief explanation of the feature
+      placeholder: Describe in a few lines your feature request
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Issue and Reproduction Steps
+      description: Please describe the issue and list out commands run to reproduce.
+    validations:
+      required: false
