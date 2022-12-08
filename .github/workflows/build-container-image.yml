@@ -4,6 +4,9 @@ name: Build & Publish Container Image
 
 on:
   workflow_dispatch:
+  pull_request:
+    branch:
+      - main
   push:
     branches:
       - main
@@ -59,7 +62,7 @@ jobs:
         uses: docker/build-push-action@v3
         id: docker_build
         with:
-          push: ${{ github.event_name != 'pull_request' }}
+          push: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
           context: .
           file: ./prebuild.Dockerfile
           platforms: linux/amd64,linux/arm64
