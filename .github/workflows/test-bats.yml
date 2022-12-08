@@ -1,5 +1,4 @@
-name: Test Github Tag Action
-# This workflow tests the tag action and can be used on PRs to detect (some) breaking changes.
+name: Test Bash with BATS
 
 on:
   workflow_dispatch:
