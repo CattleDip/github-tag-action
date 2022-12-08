@@ -48,6 +48,10 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           images: |
             ${{ env.REGISTRY }}/${{ env.REGISTRY_USER }}/${{ env.IMAGE_NAME }}
+          labels: |
+            org.opencontainers.image.source=${{ github.event.repository.html_url }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.description="GitHub Action to automatically tag and release a new version of your project"
           tags: |
             type=schedule
             type=ref,event=branch
