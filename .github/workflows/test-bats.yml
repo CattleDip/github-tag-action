@@ -1,0 +1,37 @@
+name: Test Github Tag Action
+# This workflow tests the tag action and can be used on PRs to detect (some) breaking changes.
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+permissions:
+  pull-requests: write
+  checks: write
+  statuses: write
+  contents: read
+  packages: read
+
+# One build per branch, cancel out of date builds
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  bats-testing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Setup BATS
+        uses: mig4/setup-bats@v1
+        with:
+          bats-version: 1.8.2
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Test with BATS
+        run: bats -r .
