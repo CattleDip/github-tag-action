@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:19-alpine
 
 LABEL "repository"="https://github.com/CattleDip/github-tag-action"
 LABEL "homepage"="https://github.com/CattleDip/github-tag-action"
