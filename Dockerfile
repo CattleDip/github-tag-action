@@ -1,8 +1,8 @@
 # hadolint ignore=DL3007
-FROM ghcr.io/CattleDip/github-tag-action:latest
+FROM ghcr.io/cattledip/github-tag-action:latest
 
-LABEL "repository"="https://github.com/CattleDip/github-tag-action"
-LABEL "homepage"="https://github.com/CattleDip/github-tag-action"
+LABEL "repository"="https://github.com/cattledip/github-tag-action"
+LABEL "homepage"="https://github.com/cattledip/github-tag-action"
 LABEL "maintainer"="CattleDip"
 
 # This Dockerfile is empty, it simply pulls a prebuilt image to speed up the Action.
