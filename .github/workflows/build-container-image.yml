@@ -5,7 +5,7 @@ name: Build & Publish Container Image
 on:
   workflow_dispatch:
   pull_request:
-    branch:
+    branches:
       - main
   push:
     branches:
@@ -35,7 +35,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           images: |
-            ghcr.io/CattleDip/${{ env.IMAGE_NAME }}
+            ghcr.io/cattledip/${{ env.IMAGE_NAME }}
           tags: |
             type=schedule
             type=ref,event=branch
