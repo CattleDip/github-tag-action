@@ -2,7 +2,6 @@
 
 Please include a summary of the change, which issue(s) it fixes, how it can be tested and if there are breaking changes.
 
--
 
 ## How Has This Been Tested?
 
