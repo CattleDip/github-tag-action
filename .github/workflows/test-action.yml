@@ -77,10 +77,10 @@ jobs:
 
           # check that the original tag got bumped either major, minor, patch
           verlte() {
-            [  "$1" = "`echo -e "$1\n$2" | sort -V | head -n1`" ]
+            [  "$1" = "$(echo -e "$1\n$2" | sort -V | head -n1)" ]
           }
           verlt() {
-            [ "$1" = "$2" ] && return 1 || verlte $1 $2
+            [ "$1" = "$2" ] && return 1 || verlte "$1" "$2"
           }
 
           main="$(verlt $MAIN_OUTPUT_TAG $MAIN_OUTPUT_NEWTAG && true || false)"
