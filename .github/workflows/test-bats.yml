@@ -33,7 +33,7 @@ jobs:
           fetch-depth: '0'
 
       - name: Setup BATS
-        uses: mig4/setup-bats@v1
+        uses: mig4/setup-bats@af9a00deb21b5d795cabfeaa8d9060410377686d # v1
         with:
           bats-version: 1.8.2
 
