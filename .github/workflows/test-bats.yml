@@ -32,6 +32,10 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: '0'
 
+      - run: |
+          apt-get install -y curl jq
+          npm install -g semver
+
       - name: Setup BATS
         uses: mig4/setup-bats@v1
         with:
