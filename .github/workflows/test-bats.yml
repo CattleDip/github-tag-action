@@ -33,7 +33,7 @@ jobs:
           fetch-depth: '0'
 
       - run: |
-          apt-get install -y curl jq
+          sudo apt-get install -y curl jq
           npm install -g semver
 
       - name: Setup BATS
