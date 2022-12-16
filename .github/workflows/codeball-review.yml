@@ -24,6 +24,7 @@ concurrency:
 jobs:
   codeball-review:
     runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
     timeout-minutes: 10
     name: Run Codeball Code Review
     steps:

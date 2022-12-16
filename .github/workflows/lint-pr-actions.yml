@@ -28,16 +28,17 @@ concurrency:
 jobs:
   lint-actions-workflows:
     name: Lint Actions Workflows
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
       - uses: reviewdog/action-actionlint@46bb1b6f2d05d10a2c2851ee235fe36a0ad2daa5 # tag=v1
         with:
-          actionlint_flags: -color -ignore 'SC2086' -ignore 'SC2129'
-          fail_on_error: false
-          level: error
-          reporter: github-pr-review
+          ACTIONLINT_FLAGS: -color -ignore 'SC2086' -ignore 'SC2129'
+          FAIL_ON_ERROR: false
+          LEVEL: error
+          REPORTER: github-pr-review
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

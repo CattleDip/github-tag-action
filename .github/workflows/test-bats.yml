@@ -21,6 +21,13 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  DRY_RUN: "false"
+  TAG_CONTEXT: "branch"
+  PRERELEASE: "true"
+  PRERELEASE_SUFFIX: "bats"
+  VERBOSE: "true"
+
 jobs:
   bats-testing:
     runs-on: ubuntu-latest
@@ -31,6 +38,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: '0'
+
+      - run: |
+          sudo apt-get install -y curl jq
+          npm install -g semver
 
       - name: Setup BATS
         uses: mig4/setup-bats@v1
