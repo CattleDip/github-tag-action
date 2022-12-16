@@ -104,12 +104,12 @@ jobs:
         id: tag_version
         uses: cattledip/github-tag-action@main
         env:
-          VERBOSE: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_BRANCHES: main
-          PRE_RELEASE_BRANCHES: dev
-          WITH_V: true
-          REPLACE_LATEST_TAG: true
+          verbose: true
+          github_toke: ${{ secrets.GITHUB_TOKEN }}
+          release_branches: main
+          pre_release_branches: dev
+          with_v: true
+          replace_latest_tag: true
 
       # Publish
       - name: Create a GitHub release

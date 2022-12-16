@@ -21,6 +21,13 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  DRY_RUN: "false"
+  TAG_CONTEXT: "branch"
+  PRERELEASE: "true"
+  PRERELEASE_SUFFIX: "bats"
+  VERBOSE: "true"
+
 jobs:
   bats-testing:
     runs-on: ubuntu-latest
