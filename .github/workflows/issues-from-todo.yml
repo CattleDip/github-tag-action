@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 15
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: "actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b" # tag=v3
+      - uses: "actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c" # v3
       - name: "Check for TODOs and create or update issues"
-        uses: "alstr/todo-to-issue-action@fffb31f4fe645d6d79085a3ed46c1879c5543d08" # tag=v4
+        uses: "alstr/todo-to-issue-action@b50288792858dfc84690dbd7c1ecf99a4a1b52b8" # v4
         id: "todo"
